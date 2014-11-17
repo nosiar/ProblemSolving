@@ -2,9 +2,12 @@
 #include <algorithm>
 #include <cstring>
 #include <vector>
+#include <queue>
 #include <functional>
 
 using namespace std;
+
+int n;
 
 int main()
 {
