@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <numeric>
 #include <algorithm>
@@ -54,7 +54,7 @@ namespace kitamasa
 
         if (n < k) return 1;
 
-        // a_n = ¥Òcoef[n][i] * a_i
+        // a_n = Î£coef[n][i] * a_i
         coef_base.resize(2 * k - 1);
 
         // [0,k)
