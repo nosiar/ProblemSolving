@@ -28,7 +28,7 @@ T dijkstra(std::vector<std::pair<T, int>> *e, int n, int s, int d)
 
         for (auto edge : e[cur.second])
         {
-            double new_dist = dist[cur.second] + edge.first;
+            T new_dist = dist[cur.second] + edge.first;
             if (dist[edge.second] > new_dist)
             {
                 dist[edge.second] = new_dist;

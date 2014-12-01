@@ -76,6 +76,6 @@ namespace kitamasa
         }
 
         auto coef_final = kitamasa_sub(n);
-        return std::accumulate(coef_final.begin(), coef_final.end(), 0ll) % mod;
+        return (int)std::accumulate(coef_final.begin(), coef_final.end(), 0ll) % mod;
     }
 }
