@@ -1,12 +1,6 @@
 ﻿#include <iostream>
-#include <algorithm>
+#include <string>
 #include <queue>
-
-auto comp = [](char* a, char* b)
-{
-    while (*a != 0 && *b != 0 && *a == *b) { a++; b++; }
-    return *a < *b;
-};
 
 struct trie
 {
@@ -60,7 +54,7 @@ struct trie
             {
                 int s = n[cur_node].suffix;
                 int s_dist = n[cur_node].suffix_dist;
- 
+
                 while (s && !n[s].children[i])
                 {
                     s_dist += n[s].suffix_dist;
@@ -114,7 +108,7 @@ struct trie
                 }
             }
             else
-            { 
+            {
                 /* suffix가 root까지 올라갔는데도 못찾을 경우 */
                 begin++;
                 end++;
@@ -146,71 +140,15 @@ struct trie
     }
 };
 
-
 void aho_corasick()
 {
-    int n = 7;
-    char* dict[100] = { "a", "ab", "bab", "bc", "bca", "c", "caa" };
+    std::vector<char*>dict = { "a", "ab", "bab", "bc", "bca", "c", "caa" };
 
     trie t;
-    for (int i = 0; i < 7; ++i)
-        t.add(dict[i]);
+    for (auto x : dict)
+        t.add(x);
 
-    //t.print();
-
+    t.print();
     t.link();
     t.match("abcdcab");
-}
-
-std::vector<int> partial_match(char* word)
-{
-    int len = strlen(word);
-
-    std::vector<int> table(len);
-
-    int matched = 0;
-
-    for (int pos = 1; pos < len; ++pos)
-    {
-        while (matched > 0 && word[pos] != word[matched])
-            matched = table[matched - 1];
-
-        if (word[pos] == word[matched])
-        {
-            matched++;
-            table[pos] = matched;
-        }
-    }
-
-    return table;
-}
-
-std::vector<int> kmp(char* str, char* word)
-{
-    std::vector<int> ret;
-
-    int len = strlen(str);
-    int word_len = strlen(word);
-
-    auto partial_table = partial_match(word);
-
-    int matched = 0;
-
-    for (int pos = 0; pos < len; ++pos)
-    {
-        while (matched > 0 && str[pos] != word[matched])
-            matched = partial_table[matched - 1];
-
-        if (str[pos] == word[matched])
-        {
-            matched++;
-
-            /* 다음 루프에서 word의 범위를 벗어난 곳을 접근하지만
-             * C 문자열은 거기에 0이 들어있어서 어차피 상관 없다..?  */
-            if (matched == word_len)
-                ret.push_back(pos - matched + 1);
-        }
-    }
-
-    return ret;
 }

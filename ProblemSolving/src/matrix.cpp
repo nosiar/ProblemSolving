@@ -2,9 +2,9 @@
 #include <iostream>
 
 template<class T>
-struct SquareMatrix final
+struct square_mat final
 {
-    SquareMatrix(int s) : size(s)
+    square_mat(int s) : size(s)
     {
         mat.resize(s);
         for (auto& row : mat)
@@ -18,12 +18,12 @@ struct SquareMatrix final
 
     const std::vector<T>& operator[](int r) const
     {
-        return const_cast<SquareMatrix&>(*this)[r];
+        return const_cast<square_mat&>(*this)[r];
     }
 
-    SquareMatrix operator*(const SquareMatrix& other) const
+    square_mat operator*(const square_mat& other) const
     {
-        SquareMatrix ret(size);
+        square_mat ret(size);
         for (int i = 0; i < size; ++i)
         {
             for (int j = 0; j < size; ++j)
@@ -36,16 +36,16 @@ struct SquareMatrix final
         return ret;
     }
 
-    SquareMatrix& operator*=(const SquareMatrix& other)
+    square_mat& operator*=(const square_mat& other)
     {
-        SquareMatrix temp = *this * other;
+        square_mat temp = *this * other;
         this->mat = std::move(temp.mat);
         return *this;
     }
 
-    SquareMatrix pow(int k)
+    square_mat pow(int k)
     {
-        SquareMatrix temp = *this;
+        square_mat temp = *this;
         int bit = 30;
         while ((k >> bit & 1) == 0) bit--;
         bit--;
@@ -64,7 +64,7 @@ struct SquareMatrix final
 };
 
 template<class T>
-std::ostream& operator<<(std::ostream& os, const SquareMatrix<T>& sm)
+std::ostream& operator<<(std::ostream& os, const square_mat<T>& sm)
 {
     for (int i = 0; i < sm.size; ++i)
     {

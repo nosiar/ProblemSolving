@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\graph.cpp" />
+    <ClCompile Include="src\kitamasa.cpp" />
+    <ClCompile Include="src\matrix.cpp" />
+    <ClCompile Include="src\number.cpp" />
+    <ClCompile Include="src\string\aho_corasick.cpp" />
+    <ClCompile Include="src\string\kmp.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0465231F-EEDC-47D3-A3FC-4DD369E46196}</ProjectGuid>
     <RootNamespace>ProblemSolving</RootNamespace>
@@ -64,14 +73,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="Kitamasa.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Number.cpp" />
-    <ClCompile Include="SquareMatrix.cpp" />
-    <ClCompile Include="String.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,9 +1,11 @@
 #include <iostream>
-#include <algorithm>
 #include <cstring>
+#include <algorithm>
 #include <vector>
 #include <queue>
+#include <stack>
 #include <functional>
+#include <numeric>
 
 using namespace std;
 
@@ -11,11 +13,11 @@ int n;
 
 int main()
 {
-    int test_number;
+    int tests;
 
-    cin >> test_number;
+    cin >> tests;
 
-    while (test_number--)
+    while (tests--)
     {
     }
 }

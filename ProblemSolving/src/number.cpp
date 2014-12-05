@@ -8,7 +8,7 @@ int gcd(int a, int b)
 }
 
 /* return { d, x, y } where gcd(a,b) = d = ax + by */
-std::tuple<int,int,int> extended_gcd(int a, int b)
+std::tuple<int, int, int> extended_gcd(int a, int b)
 {
     if (b == 0)
         return std::tuple<int, int, int> { a, 1, 0 };
@@ -19,7 +19,7 @@ std::tuple<int,int,int> extended_gcd(int a, int b)
     int x = std::get<1>(r);
     int y = std::get<2>(r);
 
-    return std::tuple <int, int, int>{ d, y, x - a/b*y };
+    return std::tuple<int, int, int>{ d, y, x - a/b*y };
 }
 
 /* a has a (unique) multiplicative inverse iif gcd(a,n)=1 */
