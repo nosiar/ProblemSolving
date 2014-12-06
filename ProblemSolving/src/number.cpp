@@ -35,8 +35,8 @@ int inverse(int a, int n)
  * factor[i] : number of divisors
  * phi[i] : Euler's totient function
  *          if gcd(a, m) = 1 then a^phi(m) = 1 (mod m)
-            therefore a^(phi(m)-1) = a^-1
-            if m is prime, a^(m-2) = a^-1
+ *          therefore a^(phi(m)-1) = a^-1
+ *          if m is prime, a^(m-2) = a^-1
  */
 void eratosthenes(int n)
 {

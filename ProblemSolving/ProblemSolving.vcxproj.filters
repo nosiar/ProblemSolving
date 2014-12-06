@@ -39,5 +39,8 @@
     <ClCompile Include="src\string\kmp.cpp">
       <Filter>Source Files\string</Filter>
     </ClCompile>
+    <ClCompile Include="src\tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
