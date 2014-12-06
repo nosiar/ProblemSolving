@@ -141,14 +141,17 @@ struct treap
 
     ~treap()
     {
-        std::queue<node*> q;
-        q.push(root);
-        while (!q.empty())
+        if (root)
         {
-            node* x = q.front(); q.pop();
-            if (x->left) q.push(x->left);
-            if (x->right) q.push(x->right);
-            delete x;
+            std::queue<node*> q;
+            q.push(root);
+            while (!q.empty())
+            {
+                node* x = q.front(); q.pop();
+                if (x->left) q.push(x->left);
+                if (x->right) q.push(x->right);
+                delete x;
+            }
         }
     }
 };
