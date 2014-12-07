@@ -8,12 +8,15 @@
 #include <functional>
 #include <numeric>
 #include <limits>
-
+#define LOCAL
 using namespace std;
 
 int n;
 
-int main() { ios::sync_with_stdio(false); int tests; cin >> tests; while (tests--)
+int main() { 
+#ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+#endif
+ios::sync_with_stdio(false); int tests; cin >> tests; while (tests--)
 {
-    cin >> n;
 }}

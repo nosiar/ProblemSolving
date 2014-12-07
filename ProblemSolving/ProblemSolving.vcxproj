@@ -20,6 +20,9 @@
     <ClCompile Include="src\string\kmp.cpp" />
     <ClCompile Include="src\tree.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0465231F-EEDC-47D3-A3FC-4DD369E46196}</ProjectGuid>
     <RootNamespace>ProblemSolving</RootNamespace>
