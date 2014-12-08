@@ -26,6 +26,11 @@ double dot(vec v0, vec v1)
     return v0.x*v1.x + v0.y*v1.y;
 }
 
+double cross(vec v0, vec v1)
+{
+    return v0.x*v1.y - v1.x*v0.y;
+}
+
 vec operator+(vec v0, vec v1)
 {
     return{ v0.x + v1.x, v0.y + v1.y };
@@ -34,4 +39,14 @@ vec operator+(vec v0, vec v1)
 vec operator-(vec v0, vec v1)
 {
     return{ v0.x - v1.x, v0.y - v1.y };
+}
+
+vec operator*(double d, vec v)
+{
+    return{ d*v.x, d*v.y };
+}
+
+bool operator==(vec v0, vec v1)
+{
+    return abs(v0.x - v1.x) < EPS && abs(v0.y - v1.y) < EPS;
 }
