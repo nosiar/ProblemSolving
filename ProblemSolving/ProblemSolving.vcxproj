@@ -19,7 +19,8 @@
     <ClCompile Include="src\number.cpp" />
     <ClCompile Include="src\string\aho_corasick.cpp" />
     <ClCompile Include="src\string\kmp.cpp" />
-    <ClCompile Include="src\tree.cpp" />
+    <ClCompile Include="src\tree\segment_tree.cpp" />
+    <ClCompile Include="src\tree\treap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

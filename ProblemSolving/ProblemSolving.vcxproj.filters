@@ -16,6 +16,9 @@
     <Filter Include="Source Files\string">
       <UniqueIdentifier>{984b9d35-521b-4a98-b6b6-63de0528d6c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tree">
+      <UniqueIdentifier>{6b126e64-388b-429d-85d9-518d606485c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,11 +42,14 @@
     <ClCompile Include="src\string\kmp.cpp">
       <Filter>Source Files\string</Filter>
     </ClCompile>
-    <ClCompile Include="src\tree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\geometry.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tree\segment_tree.cpp">
+      <Filter>Source Files\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tree\treap.cpp">
+      <Filter>Source Files\tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
