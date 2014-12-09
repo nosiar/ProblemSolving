@@ -83,9 +83,9 @@ struct segment_tree
     }
 };
 
-struct max_query : segment_tree < int, int >
+struct min_query : segment_tree < int, int >
 {
-    max_query(int* arr, int n_)
+    min_query(int* arr, int n_)
         : segment_tree(arr, n_, [](int a, int b) { return std::min(a, b); },
                        [](int a) { return a; },
                        std::numeric_limits<int>::max()) {}
