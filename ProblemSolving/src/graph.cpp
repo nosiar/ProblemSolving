@@ -40,8 +40,8 @@ T dijkstra(std::vector<std::pair<T, int>> *edges, int v, int s, int d)
     return dist[d];
 }
 
-template<class T>
-void floyd_warshall(std::vector<std::pair<T, int>> *edges, int v, T* dist[])
+template<class T, size_t v>
+void floyd_warshall(std::vector<std::pair<T, int>> *edges, T(&dist)[v][v])
 {
     for (int i = 0; i < v; ++i)
     {
