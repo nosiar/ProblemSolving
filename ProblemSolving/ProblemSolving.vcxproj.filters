@@ -51,6 +51,9 @@
     <ClCompile Include="src\tree\treap.cpp">
       <Filter>Source Files\tree</Filter>
     </ClCompile>
+    <ClCompile Include="src\bigint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
