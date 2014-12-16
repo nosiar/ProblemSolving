@@ -2,45 +2,48 @@
 
 struct disjoint_set
 {
-    struct node
+    std::vector<int> parent;
+    std::vector<int> rank;
+    std::vector<int> size;
+
+    disjoint_set(int n) : parent(n), rank(n), size(n)
     {
-        node* parent;
-        int rank;
-        int size;
-    };
-
-    std::vector<node> nodes;
-
-    disjoint_set(int n) : nodes(n) {}
-
-    node* find(node* a)
-    {
-        if (a->parent == a) return a;
-        return a->parent = find(a->parent);
+        for (int i = 0; i < n; ++i)
+        {
+            parent[i] = i;
+            rank[i] = 0;
+            size[i] = 1;
+        }
     }
 
-    void yunion(node* a, node* b)
+    int find(int a)
+    {
+        if (parent[a] == a) return a;
+        return parent[a] = find(parent[a]);
+    }
+
+    void yunion(int a, int b)
     {
         a = find(a);
         b = find(b);
 
         if (a == b) return;
 
-        if (a->rank < b->rank)
+        if (rank[a] < rank[b])
         {
-            a->parent = b;
-            b->size += a->size;
+            parent[a] = b;
+            size[b] += size[a];
         }
-        else if (a->rank > b->rank)
+        else if (rank[a] > rank[b])
         {
-            b->parent = a;
-            a->size += b->size;
+            parent[b] = a;
+            size[a] += size[b];
         }
         else
         {
-            a->parent = b;
-            b->rank++;
-            b->size += a->size;
+            parent[a] = b;
+            rank[b]++;
+            size[b] += size[a];
         }
     }
 };
