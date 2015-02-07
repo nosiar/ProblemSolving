@@ -19,12 +19,12 @@
     <Filter Include="Source Files\tree">
       <UniqueIdentifier>{6b126e64-388b-429d-85d9-518d606485c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\graph">
+      <UniqueIdentifier>{d1c954f5-8a16-4db2-bc0d-25bf17235e2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\kitamasa.cpp">
@@ -56,6 +56,12 @@
     </ClCompile>
     <ClCompile Include="src\disjoint_set.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\shortest_path.cpp">
+      <Filter>Source Files\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\edmonds_karp.cpp">
+      <Filter>Source Files\graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

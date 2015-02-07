@@ -3,7 +3,7 @@
 #include <functional>
 
 /************************************************************************/
-/*  edges[from] : vector of {weight, to}                                    */
+/*  edges[from] : vector of {weight, to}                                */
 /*  v : number of vertex                                                */
 /*  s : source                                                          */
 /*  d : destination                                                     */
@@ -12,7 +12,7 @@ template<class T>
 T dijkstra(std::vector<std::pair<T, int>> *edges, int v, int s, int d)
 {
     std::priority_queue<std::pair<T, int>,
-                        std::vector<pair<T, int>>, 
+                        std::vector<pair<T, int>>,
                         std::greater<pair<T, int>>> q;
     q.push({ 0.0, s });
 
