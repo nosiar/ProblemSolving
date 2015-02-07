@@ -44,3 +44,40 @@ int edmonds_karp(int source, int sink, int(&capacity)[v][v])
 
     return net_flow;
 }
+
+template<size_t v_a, size_t v_b>
+bool dfs(int a, bool(&adj)[v_a][v_b], std::vector<int>&match_a, std::vector<int>&match_b, std::vector<bool>&visited)
+{
+    if (visited[a]) return false;
+    visited[a] = true;
+
+    for (int b = 0; b < v_b; ++b)
+    {
+        if (adj[a][b])
+        {
+            if (match_b[b] == -1 || dfs(match_b[b], adj, match_a, match_b, visited))
+            {
+                match_a[a] = b;
+                match_b[b] = a;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+template<size_t v_a, size_t v_b>
+int bipartite_matching(bool(&adj)[v_a][v_b])
+{
+    std::vector<int> match_a(v_a, -1);
+    std::vector<int> match_b(v_b, -1);
+
+    int size = 0;
+    for (int start = 0; start < v_a; ++start)
+    {
+        std::vector<bool>visited(v_a);
+        if (dfs(start, adj, match_a, match_b, visited))
+            size++;
+    }
+    return size;
+}
