@@ -22,6 +22,7 @@
     <ClCompile Include="src\number.cpp" />
     <ClCompile Include="src\string\aho_corasick.cpp" />
     <ClCompile Include="src\string\kmp.cpp" />
+    <ClCompile Include="src\string\suffix_array.cpp" />
     <ClCompile Include="src\tree\segment_tree.cpp" />
     <ClCompile Include="src\tree\treap.cpp" />
   </ItemGroup>
