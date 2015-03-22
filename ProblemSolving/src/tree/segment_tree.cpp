@@ -90,3 +90,31 @@ struct min_query : segment_tree < int, int >
                        [](int a) { return a; },
                        std::numeric_limits<int>::max()) {}
 };
+
+struct fenwick_tree
+{
+    std::vector<int> nodes;
+
+    fenwick_tree(int n) : nodes(n + 1) {}
+
+    int sum(int pos)
+    {
+        int ret = 0;
+        while (pos > 0)
+        {
+            ret += nodes[pos];
+            pos &= (pos - 1);
+        }
+        return ret;
+    }
+
+    void add(int pos, int val)
+    {
+        ++pos;
+        while (pos < nodes.size())
+        {
+            nodes[pos] += val;
+            pos += (pos & -pos);
+        }
+    }
+};
