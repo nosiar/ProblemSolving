@@ -17,6 +17,7 @@
     <ClCompile Include="src\geometry.cpp" />
     <ClCompile Include="src\graph\edmonds_karp.cpp" />
     <ClCompile Include="src\graph\shortest_path.cpp" />
+    <ClCompile Include="src\graph\tarjan.cpp" />
     <ClCompile Include="src\kitamasa.cpp" />
     <ClCompile Include="src\matrix.cpp" />
     <ClCompile Include="src\number.cpp" />

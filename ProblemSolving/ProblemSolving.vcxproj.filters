@@ -66,6 +66,9 @@
     <ClCompile Include="src\string\suffix_array.cpp">
       <Filter>Source Files\string</Filter>
     </ClCompile>
+    <ClCompile Include="src\graph\tarjan.cpp">
+      <Filter>Source Files\graph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
