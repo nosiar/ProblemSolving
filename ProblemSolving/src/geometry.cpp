@@ -4,49 +4,64 @@
 #define PI 3.14159265358979323846
 #define EPS 1e-9
 
-#define x first
-#define y second
-
-typedef std::pair<double, double> point;
-typedef std::pair<double, double> vec;
-
-double length(vec v)
+struct point
 {
-    return std::sqrt(v.x*v.x + v.y*v.y);
-}
+    double x, y;
+    bool operator<(const point& rhs) const
+    {
+        if (abs(x - rhs.x) < EPS)
+            return y + EPS < rhs.y;
+        return x < rhs.x;
+    }
+    bool operator>(const point& rhs) const
+    {
+        return rhs < *this;
+    }
+    bool operator<=(const point& rhs) const
+    {
+        return !(*this > rhs);
+    }
+    bool operator>=(const point& rhs) const
+    {
+        return !(*this < rhs);
+    }
+    bool operator==(const point& rhs) const
+    {
+        return abs(x - rhs.x) < EPS && abs(y - rhs.y) < EPS;
+    }
+    bool operator!=(const point& rhs) const
+    {
+        return !(*this == rhs);
+    }
+    double length() const
+    {
+        return std::sqrt(x*x + y*y);
+    }
+    point normalize() const
+    {
+        double len = length();
+        return{ x / len, y / len };
+    }
+    double dot(const point& rhs) const
+    {
+        return x*rhs.x + y*rhs.y;
+    }
+    double cross(const point& rhs) const
+    {
+        return x*rhs.y - rhs.x*y;
+    }
+    point operator+(const point& rhs) const
+    {
+        return{ x + rhs.x, y + rhs.y };
+    }
+    point operator-(const point& rhs) const
+    {
+        return{ x - rhs.x, y - rhs.y };
+    }
+    point operator*(double d) const
+    {
+        return{ d*x, d*y };
+    }
+};
+using vec = point;
 
-vec normalize(vec v)
-{
-    double len = length(v);
-    return{ v.x / len, v.y / len };
-}
-
-double dot(vec v0, vec v1)
-{
-    return v0.x*v1.x + v0.y*v1.y;
-}
-
-double cross(vec v0, vec v1)
-{
-    return v0.x*v1.y - v1.x*v0.y;
-}
-
-vec operator+(vec v0, vec v1)
-{
-    return{ v0.x + v1.x, v0.y + v1.y };
-}
-
-vec operator-(vec v0, vec v1)
-{
-    return{ v0.x - v1.x, v0.y - v1.y };
-}
-
-vec operator*(double d, vec v)
-{
-    return{ d*v.x, d*v.y };
-}
-
-bool operator==(vec v0, vec v1)
-{
-    return abs(v0.x - v1.x) < EPS && abs(v0.y - v1.y) < EPS;
-}
