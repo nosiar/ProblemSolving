@@ -9,7 +9,7 @@
 /*  d : destination                                                     */
 /************************************************************************/
 template<class T>
-T dijkstra(std::vector<std::pair<T, int>> *edges, int v, int s, int d)
+T dijkstra(std::vector<std::pair<T, int>>* edges, int v, int s, int d)
 {
     std::priority_queue<std::pair<T, int>,
                         std::vector<pair<T, int>>,
@@ -40,8 +40,38 @@ T dijkstra(std::vector<std::pair<T, int>> *edges, int v, int s, int d)
     return dist[d];
 }
 
+
+template<class T>
+std::vector<T> bellman_ford(std::vector<std::pair<T, int>>* edges, int v, int s)
+{
+    std::vector<T> upper(v, 987654321);
+    upper[s] = 0;
+
+    bool update;
+    for (int i = 0; i < v; ++i)
+    {
+        update = false;
+        for (int vertex = 0; vertex < v; ++vertex)
+        {
+            for (auto edge : edges[vertex])
+            {
+                T new_dist = upper[vertex] + edge.first;
+                if (upper[edge.second] > new_dist)
+                {
+                    upper[edge.second] = new_dist;
+                    update = true;
+                }
+            }
+        }
+        if (!update) break;
+    }
+
+    if (update) upper.clear();
+    return upper;
+}
+
 template<class T, size_t v>
-void floyd_warshall(std::vector<std::pair<T, int>> *edges, T(&dist)[v][v])
+void floyd_warshall(std::vector<std::pair<T, int>>* edges, T(&dist)[v][v])
 {
     for (int i = 0; i < v; ++i)
     {
