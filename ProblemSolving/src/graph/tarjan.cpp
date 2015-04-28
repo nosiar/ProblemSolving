@@ -12,7 +12,7 @@ struct tarjan
     int next_scc_id;
     std::stack<int> st;
 
-    tarjan(std::vector<std::vector<int>>& adj_) : adj(adj_), n(adj_.size()), id(n), scc_id(n, -1), next_id(0), next_scc_id(0)
+    tarjan(std::vector<std::vector<int>>& adj_) : adj(adj_), n(adj_.size()), id(n, -1), scc_id(n, -1), next_id(0), next_scc_id(0)
     {
     }
 
