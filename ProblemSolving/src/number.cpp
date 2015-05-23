@@ -82,3 +82,17 @@ void eratosthenes(int n)
         }
     }
 }
+
+/* calculate nCk (mod p) in O(lgn) for a small prime number p */
+int** binom;
+int locas(int n, int k, int p)
+{
+    int ret = 1;
+    while (n)
+    {
+        ret = ret * binom[n%p][k%p] % p;
+        n /= p;
+        k /= p;
+    }
+    return ret;
+}
