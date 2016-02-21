@@ -70,6 +70,48 @@ std::vector<T> bellman_ford(std::vector<std::pair<T, int>>* edges, int v, int s)
     return upper;
 }
 
+// Shortest Path Faster Algorithm
+template<class T>
+std::vector<T> spfa(std::vector<std::pair<T, int>>* edges, int v, int s)
+{
+    std::vector<int> relaxed_count(v);
+    std::vector<bool> in_queue(v);
+    std::vector<T> upper(v, 987654321);
+    upper[s] = 0;
+
+    queue<int> q;
+    q.push(0);
+    while (!q.empty())
+    {
+        int vertex = q.front(); q.pop();
+
+        for (auto edge : edges[vertex])
+        {
+            T new_dist = upper[vertex] + edge.first;
+            if (upper[edge.second] > new_dist)
+            {
+                upper[edge.second] = new_dist;
+
+                if (++relaxed_count[edge.second] == v)
+                {
+                    upper.clear();
+                    return upper;
+                }
+
+                if (!in_queue[edge.second])
+                {
+                    q.push(edge.second);
+                    in_queue[edge.second] = true;
+                }
+            }
+        }
+
+        in_queue[vertex] = false;
+    }
+
+    return upper;
+}
+
 template<class T, size_t v>
 void floyd_warshall(std::vector<std::pair<T, int>>* edges, T(&dist)[v][v])
 {
