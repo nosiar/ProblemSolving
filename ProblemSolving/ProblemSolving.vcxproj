@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fft.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\bigint.cpp" />
     <ClCompile Include="src\disjoint_set.cpp" />
