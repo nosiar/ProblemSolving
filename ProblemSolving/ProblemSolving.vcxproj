@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fft.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\bigint.cpp" />
     <ClCompile Include="src\disjoint_set.cpp" />
+    <ClCompile Include="src\fft.cpp" />
     <ClCompile Include="src\geometry.cpp" />
     <ClCompile Include="src\graph\edmonds_karp.cpp" />
     <ClCompile Include="src\graph\shortest_path.cpp" />

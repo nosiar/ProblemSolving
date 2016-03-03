@@ -69,7 +69,7 @@
     <ClCompile Include="src\graph\tarjan.cpp">
       <Filter>Source Files\graph</Filter>
     </ClCompile>
-    <ClCompile Include="fft.cpp">
+    <ClCompile Include="src\fft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
