@@ -27,7 +27,7 @@ int inverse(int a, int n)
 {
     auto r = extended_gcd(a, n);
     if (std::get<0>(r) != 1) return -1;
-    return std::get<1>(r);
+    return (std::get<1>(r) % n + n) % n;
 }
 
 /*
