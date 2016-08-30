@@ -2,6 +2,7 @@
 #include <complex>
 #include <cmath>
 #include <algorithm>
+#include <iterator>
 
 using complex = std::complex<double>;
 using polynomial = std::vector<int>;
