@@ -27,6 +27,11 @@ if [ ! -f "$SRC" ]; then
     exit 1
 fi
 
+# 자동 포맷 (clang-format이 설치돼 있을 때만; .clang-format 설정을 따른다)
+if command -v clang-format >/dev/null 2>&1; then
+    clang-format -i "$SRC"
+fi
+
 # 실행 파일은 임시 위치에 (소스 폴더를 더럽히지 않음)
 BIN="$(mktemp -t cttest)"
 trap 'rm -f "$BIN"' EXIT

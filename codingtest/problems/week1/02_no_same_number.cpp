@@ -5,9 +5,8 @@
 using namespace std;
 
 vector<int> solution(vector<int> arr) {
-    vector<int> answer;
-    // TODO
-    return answer;
+    arr.erase(unique(arr.begin(), arr.end()), arr.end());
+    return arr;
 }
 
 int main() {

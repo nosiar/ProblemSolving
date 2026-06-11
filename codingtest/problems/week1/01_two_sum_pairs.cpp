@@ -9,10 +9,10 @@ vector<int> solution(vector<int> numbers) {
 
     sort(numbers.begin(), numbers.end());
 
-    for(unsigned int i =0; i< numbers.size(); ++i) {
-       for(unsigned int j =i+1; j< numbers.size(); ++j) {
-              answer.push_back(numbers[i] + numbers[j]);
-       }
+    for (unsigned int i = 0; i < numbers.size(); ++i) {
+        for (unsigned int j = i + 1; j < numbers.size(); ++j) {
+            answer.push_back(numbers[i] + numbers[j]);
+        }
     }
 
     sort(answer.begin(), answer.end());

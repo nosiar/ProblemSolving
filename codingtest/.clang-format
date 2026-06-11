@@ -1,0 +1,14 @@
+# 코테 풀이용 clang-format 설정.
+# 기존 풀이 스타일(4-space, 여는 중괄호 같은 줄)에 맞춤.
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 0          # 줄 길이 제한 없음 (긴 예제 호출이 강제 줄바꿈되지 않게)
+BreakBeforeBraces: Attach   # int main() { 처럼 여는 중괄호 같은 줄
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+SpaceBeforeParens: ControlStatements   # for/if/while 뒤 공백, 함수 호출엔 없음
+PointerAlignment: Left   # int* p
+SortIncludes: false      # #include 순서 건드리지 않음 (bits/stdc++.h 한 줄이라 무관)

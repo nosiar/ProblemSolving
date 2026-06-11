@@ -44,6 +44,17 @@ prob02.cpp  ←→  prob02.txt
 실행 시 `(입력 파일: ...)`로 어떤 입력을 썼는지 표시해주므로, 엉뚱한 입력으로
 돌리는 실수를 방지할 수 있다.
 
+## 자동 코드 정렬
+
+`clang-format`이 설치돼 있으면 `run.sh`가 실행 직전에 소스를 자동 정렬한다
+(`.clang-format` 설정을 따름: 4-space, 여는 중괄호 같은 줄 등). 들여쓰기가 망가져도
+`./run.sh probXX.cpp` 한 번이면 깔끔해진다.
+
+```bash
+brew install clang-format     # 설치 (이미 했다면 생략)
+clang-format -i probXX.cpp    # run.sh 없이 수동 정렬도 가능
+```
+
 ## 환경 메모
 
 - 컴파일러: Apple clang (`clang++`), C++17.

@@ -5,7 +5,7 @@
 using namespace std;
 
 string solution(string s) {
-    string answer = "";
+       string answer = "";
     // TODO
     return answer;
 }

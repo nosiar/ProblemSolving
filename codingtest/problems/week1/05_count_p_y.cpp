@@ -5,9 +5,18 @@
 using namespace std;
 
 bool solution(string s) {
-    bool answer = true;
-    // TODO
-    return answer;
+    int p = 0;
+    int y = 0;
+    for (char x : s) {
+        if (x == 'p' || x == 'P') {
+            p++;
+        }
+        if (x == 'y' || x == 'Y') {
+            y++;
+        }
+    }
+
+    return p == y;
 }
 
 int main() {
