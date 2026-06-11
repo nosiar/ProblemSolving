@@ -18,7 +18,8 @@ vector<int> solution(long long n) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    for (int x : solution(12345)) cout << x << ' ';  // 기대: 5 4 3 2 1
+    for (int x : solution(12345))
+        cout << x << ' ';  // 기대: 5 4 3 2 1
     cout << '\n';
     return 0;
 }

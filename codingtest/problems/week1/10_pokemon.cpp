@@ -5,14 +5,14 @@
 using namespace std;
 
 int solution(vector<int> nums) {
-    int answer = 0;
-    // TODO
-    return answer;
+    sort(nums.begin(), nums.end());
+    unsigned long u = unique(nums.begin(), nums.end()) - nums.begin();
+    return min(u, nums.size() / 2);
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout << solution({3,1,2,3}) << '\n';  // 기대: 2
+    cout << solution({3, 1, 2, 3}) << '\n';  // 기대: 2
     return 0;
 }

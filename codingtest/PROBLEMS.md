@@ -15,17 +15,17 @@
 
 목표: 정답보다 **vector / string / map / sort가 손에 붙는 것**.
 
-- [ ] [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) — 완전탐색 + set 중복제거
-- [ ] [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — vector 순회/비교
-- [ ] [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/12931) — string↔int
-- [ ] [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932) — 숫자 분해
-- [ ] [문자열 내 p와 y의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/12916) — 카운팅
-- [ ] [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — sort + 비교자
-- [ ] [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **map/unordered_map 카운팅 핵심** (Kit: 해시)
-- [ ] [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 vector + sort (Kit: 정렬)
-- [ ] [모의고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840) — 패턴 매칭, 순회 (Kit: 완전탐색)
-- [ ] [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) — set으로 종류 세기 (Kit: 해시)
-- [ ] [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) — 그리디 워밍업 (Kit: 탐욕법)
+- [x] [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) — 완전탐색 + set 중복제거
+- [x] [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — vector 순회/비교
+- [x] [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/12931) — string↔int
+- [x] [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932) — 숫자 분해
+- [x] [문자열 내 p와 y의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/12916) — 카운팅
+- [x] [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — sort + 비교자
+- [x] [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **map/unordered_map 카운팅 핵심** (Kit: 해시)
+- [x] [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 vector + sort (Kit: 정렬)
+- [x] [모의고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840) — 패턴 매칭, 순회 (Kit: 완전탐색)
+- [x] [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) — set으로 종류 세기 (Kit: 해시)
+- [x] [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) — 그리디 워밍업 (Kit: 탐욕법)
 
 > 이 11개를 막힘없이 풀면 "문법 까먹었다"는 느낌은 대부분 사라진다.
 

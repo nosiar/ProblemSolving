@@ -5,9 +5,8 @@
 using namespace std;
 
 string solution(string s) {
-       string answer = "";
-    // TODO
-    return answer;
+    sort(s.rbegin(), s.rend());
+    return s;
 }
 
 int main() {

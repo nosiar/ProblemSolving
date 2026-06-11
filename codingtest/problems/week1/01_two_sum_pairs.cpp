@@ -25,7 +25,8 @@ vector<int> solution(vector<int> numbers) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    for (int x : solution({2,1,3,4,1})) cout << x << ' ';  // 기대: 2 3 4 5 6 7
+    for (int x : solution({2, 1, 3, 4, 1}))
+        cout << x << ' ';  // 기대: 2 3 4 5 6 7
     cout << '\n';
     return 0;
 }

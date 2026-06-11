@@ -12,7 +12,8 @@ vector<int> solution(vector<int> arr) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    for (int x : solution({1,1,3,3,0,1,1})) cout << x << ' ';  // 기대: 1 3 0 1
+    for (int x : solution({1, 1, 3, 3, 0, 1, 1}))
+        cout << x << ' ';  // 기대: 1 3 0 1
     cout << '\n';
     return 0;
 }
