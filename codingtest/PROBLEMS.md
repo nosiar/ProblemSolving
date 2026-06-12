@@ -36,13 +36,13 @@
 하루에 한 유형씩. "이 유형은 이렇게 접근한다"는 인출 속도 올리기.
 
 ### 완전탐색 / 시뮬레이션 (Kit: 완전탐색)
-- [ ] [카펫](https://school.programmers.co.kr/learn/courses/30/lessons/42842) — 약수 탐색
-- [ ] [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — next_permutation + 소수판정
-- [ ] [모음 사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512) — DFS/완전탐색
-- [ ] [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) — 격자 BFS (2021 카카오)
+- [x] [카펫](https://school.programmers.co.kr/learn/courses/30/lessons/42842) — 약수 탐색
+- [x] [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — next_permutation + 소수판정
+- [x] [모음 사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512) — DFS/완전탐색 (수식 + 스택DFS 둘 다)
+- [x] [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) — 격자 BFS (2021 카카오)
 
 ### BFS / DFS (Kit: 깊이/너비 우선 탐색)
-- [ ] [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165) — DFS 완전탐색 (재귀 감각)
+- [x] [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165) — DFS 완전탐색 (스택 + 재귀 둘 다)
 - [ ] [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844) — **격자 BFS 정석**
 - [ ] [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162) — DFS/Union-Find 연결요소
 - [ ] [단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163) — BFS (상태 그래프)

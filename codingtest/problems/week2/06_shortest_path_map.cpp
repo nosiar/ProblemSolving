@@ -13,6 +13,6 @@ int solution(vector<vector<int>> maps) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout << solution({{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}}) << '\n';  // 기대: 11
+    cout << solution({{1, 0, 1, 1, 1}, {1, 0, 1, 0, 1}, {1, 0, 1, 1, 1}, {1, 1, 1, 0, 1}, {0, 0, 0, 0, 1}}) << '\n';  // 기대: 11
     return 0;
 }
