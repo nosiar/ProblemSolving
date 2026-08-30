@@ -2,27 +2,28 @@
 
 > 대상: PS 경험은 있으나 인출이 녹슨 상태 → **감각 회복 순서**대로 배치.
 > 목표: 코테 합격. 화려한 알고리즘 말고 **자주 나오는 좁은 범위**를 빠르게 복구.
-> **문제별 스켈레톤 .cpp가 `problems/week{1,2,3}/` 에 순서대로 미리 만들어져 있다.**
-> 정확한 `solution` 시그니처 + 예제 main이 채워져 있으니, `// TODO`만 구현하면 된다.
-> 풀이 루틴: `problems/week1/07_*.cpp` 를 IntelliJ로 열어 풀기 → `./run.sh problems/week1/07_*.cpp`
+> **문제별 스켈레톤이 언어별로 `cpp/problems/week{1,2,3}/` 와 `java/problems/week{1,2,3}/` 에
+> 순서대로 미리 만들어져 있다.** 정확한 `solution` 시그니처 + 예제 main이 채워져 있으니 `// TODO`만 구현하면 된다.
+> 풀이 루틴(C++): `cd cpp && ./run.sh problems/week1/07_*.cpp`
+> 풀이 루틴(Java): `cd java && ./run.sh problems/week1/07_*.java`
 >
 > 체크박스는 풀면 `[x]`로 바꾸기. 막혀도 30분 넘기면 답 보고 → 다음날 다시 풀기.
 > 2주차 이후 대부분은 프로그래머스 **"코딩테스트 고득점 Kit"** 카테고리에 속한다 (각 항목에 표시).
 
 ---
 
-## 1주차 — C++/STL 손풀기 (Lv.1 중심)
+## 1주차 — 자료구조/정렬 손풀기 (Lv.1 중심)
 
-목표: 정답보다 **vector / string / map / sort가 손에 붙는 것**.
+목표: 정답보다 **배열/리스트 · 문자열 · 해시맵 · 정렬이 손에 붙는 것**.
 
 - [x] [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) — 완전탐색 + set 중복제거
-- [x] [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — vector 순회/비교
+- [x] [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — 배열 순회/비교
 - [x] [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/12931) — string↔int
 - [x] [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932) — 숫자 분해
 - [x] [문자열 내 p와 y의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/12916) — 카운팅
-- [x] [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — sort + 비교자
-- [x] [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **map/unordered_map 카운팅 핵심** (Kit: 해시)
-- [x] [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 vector + sort (Kit: 정렬)
+- [x] [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — 정렬 + 커스텀 비교자
+- [x] [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **해시맵 카운팅 핵심** (Kit: 해시)
+- [x] [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 배열 + 정렬 (Kit: 정렬)
 - [x] [모의고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840) — 패턴 매칭, 순회 (Kit: 완전탐색)
 - [x] [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) — set으로 종류 세기 (Kit: 해시)
 - [x] [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) — 그리디 워밍업 (Kit: 탐욕법)
@@ -37,7 +38,7 @@
 
 ### 완전탐색 / 시뮬레이션 (Kit: 완전탐색)
 - [x] [카펫](https://school.programmers.co.kr/learn/courses/30/lessons/42842) — 약수 탐색
-- [x] [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — next_permutation + 소수판정
+- [x] [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — 순열 생성 + 소수판정
 - [x] [모음 사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512) — DFS/완전탐색 (수식 + 스택DFS 둘 다)
 - [x] [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) — 격자 BFS (2021 카카오)
 
@@ -98,7 +99,7 @@
 
 코테 출제 빈도 × 회복 효율 기준 TOP 5:
 
-1. **해시/카운팅** (map, unordered_map) — 거의 모든 코테에 한 문제
+1. **해시/카운팅** (해시맵) — 거의 모든 코테에 한 문제
 2. **BFS/DFS (격자 포함)** — 그래프 문제의 표준
 3. **정렬 + 커스텀 비교자** — "가장 큰 수" 류 함정 단골
 4. **그리디 + 정렬** — 출제 쉬워서 자주 나옴
@@ -108,7 +109,7 @@
 
 ## 막혔을 때 원칙
 
-1. **N 크기부터 본다** → 허용 복잡도 역산 (치트시트 10번 표)
+1. **N 크기부터 본다** → 허용 복잡도 역산 (치트시트의 복잡도 표 참고)
 2. 30분 고민 → 안 되면 답 보고 **이해** → 다음날 빈 화면에서 다시 구현
 3. "기억"이 아니라 "다시 짤 수 있는가"가 회복의 기준
-4. 자료구조 선택이 막히면: 카운팅=map / 중복제거=set / 최단거리=BFS / 우선순위=priority_queue
+4. 자료구조 선택이 막히면: 카운팅=해시맵 / 중복제거=집합(set) / 최단거리=BFS / 우선순위=우선순위 큐

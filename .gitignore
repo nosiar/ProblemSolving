@@ -303,3 +303,6 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+
+# Java (코테 연습 — 보통 소스 런처라 안 생기지만 javac 대비)
+*.class
