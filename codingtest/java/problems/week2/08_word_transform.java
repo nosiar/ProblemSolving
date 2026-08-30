@@ -6,9 +6,44 @@ import java.util.*;
 
 class Solution {
     public int solution(String begin, String target, String[] words) {
-        int answer = 0;
-        // TODO
-        return answer;
+        int[] dist = new int[words.length];
+        boolean[] visited = new boolean[words.length];
+        Deque<Integer> d = new ArrayDeque<>();
+
+        for (int i = 0; i < words.length; ++i) {
+            if (isAdjacent(words[i], begin)) {
+                d.offer(i);
+                dist[i] = 1;
+                visited[i] = true;
+            }
+        }
+
+        while (!d.isEmpty()) {
+            int c = d.poll();
+
+            if (words[c].equals(target)) {
+                return dist[c];
+            }
+
+            for (int i = 0; i < words.length; ++i) {
+                if (!visited[i] && isAdjacent(words[i], words[c])) {
+                    d.offer(i);
+                    dist[i] = dist[c] + 1;
+                    visited[i] = true;
+                }
+            }
+        }
+        return 0;
+    }
+
+    private boolean isAdjacent(String a, String b) {
+        int diff = 0;
+        for (int i = 0; i < a.length(); ++i) {
+            if (a.charAt(i) != b.charAt(i) && ++diff > 1) {
+                return false;
+            }
+        }
+        return diff == 1;
     }
 
     public static void main(String[] args) {

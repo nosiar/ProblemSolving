@@ -6,9 +6,36 @@ import java.util.*;
 
 class Solution {
     public int solution(int n, int[][] computers) {
-        int answer = 0;
-        // TODO
-        return answer;
+
+        boolean[] visited = new boolean[n];
+
+        int count = 0;
+
+        for (int k = 0; k < n; ++k) {
+
+            if (visited[k]) {
+                continue;
+            }
+
+            count++;
+
+            Deque<Integer> d = new ArrayDeque<>();
+            visited[k] = true;
+            d.offer(k);
+
+            while (!d.isEmpty()) {
+                int c = d.poll();
+
+                for (int i = 0; i < n; ++i) {
+                    if (computers[c][i] == 1 && !visited[i]) {
+                        visited[i] = true;
+                        d.offer(i);
+                    }
+                }
+            }
+
+        }
+        return count;
     }
 
     public static void main(String[] args) {
