@@ -6,9 +6,29 @@ import java.util.*;
 
 class Solution {
     public String solution(String number, int k) {
-        String answer = "";
-        // TODO
-        return answer;
+        StringBuilder sb = new StringBuilder();
+
+        int cur = 0;
+        while (cur < number.length()) {
+
+            char n = number.charAt(cur);
+
+            while (k > 0 && !sb.isEmpty() && sb.charAt(sb.length() - 1) < n) {
+                sb.deleteCharAt(sb.length() - 1);
+                k--;
+            }
+
+            sb.append(n);
+
+            ++cur;
+        }
+
+        while (k > 0) {
+            sb.deleteCharAt(sb.length() - 1);
+            k--;
+        }
+
+        return sb.toString();
     }
 
     public static void main(String[] args) {
