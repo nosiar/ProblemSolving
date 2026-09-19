@@ -1,6 +1,6 @@
 // 정수 삼각형
 // https://school.programmers.co.kr/learn/courses/30/lessons/43105
-// Kit: 동적계획법 — 경로 DP
+// Lv.3 · Kit: 동적계획법 — 경로 DP
 
 import java.util.*;
 

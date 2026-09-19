@@ -1,6 +1,6 @@
 // 전화번호 목록
 // https://school.programmers.co.kr/learn/courses/30/lessons/42577
-// Kit: 해시 — 접두사 체크
+// Lv.2 · Kit: 해시 — 접두사 체크
 
 import java.util.*;
 

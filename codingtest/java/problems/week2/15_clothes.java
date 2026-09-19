@@ -1,6 +1,6 @@
 // 의상
 // https://school.programmers.co.kr/learn/courses/30/lessons/42578
-// Kit: 해시 — 카운팅 + 경우의 수
+// Lv.2 · Kit: 해시 — 카운팅 + 경우의 수
 
 import java.util.*;
 

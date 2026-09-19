@@ -1,6 +1,6 @@
 // 폰켓몬
 // https://school.programmers.co.kr/learn/courses/30/lessons/1845
-// Kit: 해시 — set으로 종류 세기
+// Lv.1 · Kit: 해시 — set으로 종류 세기
 #include <bits/stdc++.h>
 using namespace std;
 

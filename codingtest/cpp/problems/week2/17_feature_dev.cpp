@@ -1,6 +1,6 @@
 // 기능개발
 // https://school.programmers.co.kr/learn/courses/30/lessons/42586
-// Kit: 스택/큐 — 큐 시뮬레이션
+// Lv.2 · Kit: 스택/큐 — 큐 시뮬레이션
 #include <bits/stdc++.h>
 using namespace std;
 

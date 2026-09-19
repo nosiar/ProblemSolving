@@ -1,6 +1,6 @@
 // 자릿수 더하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/12931
-// string<->int
+// Lv.1 · string<->int
 #include <bits/stdc++.h>
 using namespace std;
 

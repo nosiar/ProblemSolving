@@ -1,6 +1,6 @@
 // 완주하지 못한 선수
 // https://school.programmers.co.kr/learn/courses/30/lessons/42576
-// Kit: 해시 — HashMap 카운팅 핵심
+// Lv.1 · Kit: 해시 — HashMap 카운팅 핵심
 
 import java.util.*;
 

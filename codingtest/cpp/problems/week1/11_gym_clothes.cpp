@@ -1,6 +1,6 @@
 // 체육복
 // https://school.programmers.co.kr/learn/courses/30/lessons/42862
-// Kit: 탐욕법 — 그리디 워밍업
+// Lv.1 · Kit: 탐욕법 — 그리디 워밍업
 #include <bits/stdc++.h>
 using namespace std;
 

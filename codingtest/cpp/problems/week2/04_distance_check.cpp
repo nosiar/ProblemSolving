@@ -1,6 +1,6 @@
 // 거리두기 확인하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/81302
-// 2021 카카오 — 격자 BFS
+// Lv.2 · 2021 카카오 — 격자 BFS
 #include <bits/stdc++.h>
 using namespace std;
 

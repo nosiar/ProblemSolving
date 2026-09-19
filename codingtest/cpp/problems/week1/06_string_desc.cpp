@@ -1,6 +1,6 @@
 // 문자열 내림차순으로 배치하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/12917
-// sort + 비교자
+// Lv.1 · sort + 비교자
 #include <bits/stdc++.h>
 using namespace std;
 

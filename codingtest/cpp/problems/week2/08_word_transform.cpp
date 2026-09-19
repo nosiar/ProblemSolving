@@ -1,6 +1,6 @@
 // 단어 변환
 // https://school.programmers.co.kr/learn/courses/30/lessons/43163
-// Kit: DFS/BFS — 상태 그래프 BFS
+// Lv.3 · Kit: DFS/BFS — 상태 그래프 BFS
 #include <bits/stdc++.h>
 using namespace std;
 

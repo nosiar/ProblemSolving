@@ -1,6 +1,6 @@
 // 조이스틱
 // https://school.programmers.co.kr/learn/courses/30/lessons/42860
-// Kit: 탐욕법
+// Lv.2 · Kit: 탐욕법
 #include <bits/stdc++.h>
 using namespace std;
 

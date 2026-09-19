@@ -1,6 +1,6 @@
 // 프로세스
 // https://school.programmers.co.kr/learn/courses/30/lessons/42587
-// Kit: 스택/큐 — 우선순위 큐
+// Lv.2 · Kit: 스택/큐 — 우선순위 큐
 #include <bits/stdc++.h>
 using namespace std;
 

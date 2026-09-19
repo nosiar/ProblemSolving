@@ -1,6 +1,6 @@
 // 완주하지 못한 선수
 // https://school.programmers.co.kr/learn/courses/30/lessons/42576
-// Kit: 해시 — map/unordered_map 카운팅 핵심
+// Lv.1 · Kit: 해시 — map/unordered_map 카운팅 핵심
 #include <bits/stdc++.h>
 using namespace std;
 

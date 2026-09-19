@@ -1,6 +1,6 @@
 // 타겟 넘버
 // https://school.programmers.co.kr/learn/courses/30/lessons/43165
-// Kit: DFS/BFS — DFS 완전탐색
+// Lv.2 · Kit: DFS/BFS — DFS 완전탐색
 #include <bits/stdc++.h>
 using namespace std;
 

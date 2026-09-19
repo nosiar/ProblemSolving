@@ -1,6 +1,6 @@
 // 소수 찾기
 // https://school.programmers.co.kr/learn/courses/30/lessons/42839
-// Kit: 완전탐색 — next_permutation + 소수판정
+// Lv.2 · Kit: 완전탐색 — next_permutation + 소수판정
 #include <bits/stdc++.h>
 using namespace std;
 

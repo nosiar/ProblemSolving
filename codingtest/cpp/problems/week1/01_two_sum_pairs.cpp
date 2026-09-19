@@ -1,6 +1,6 @@
 // 두 개 뽑아서 더하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/68644
-// 완전탐색 + set 중복제거
+// Lv.1 · 완전탐색 + set 중복제거
 #include <bits/stdc++.h>
 using namespace std;
 

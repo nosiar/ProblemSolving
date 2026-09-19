@@ -1,6 +1,6 @@
 // 등굣길
 // https://school.programmers.co.kr/learn/courses/30/lessons/42898
-// Kit: 동적계획법 — 격자 경로 DP + 모듈러
+// Lv.3 · Kit: 동적계획법 — 격자 경로 DP + 모듈러
 
 import java.util.*;
 

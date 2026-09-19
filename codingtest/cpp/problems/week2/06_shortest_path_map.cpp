@@ -1,6 +1,6 @@
 // 게임 맵 최단거리
 // https://school.programmers.co.kr/learn/courses/30/lessons/1844
-// Kit: DFS/BFS — 격자 BFS 정석
+// Lv.2 · Kit: DFS/BFS — 격자 BFS 정석
 #include <bits/stdc++.h>
 using namespace std;
 

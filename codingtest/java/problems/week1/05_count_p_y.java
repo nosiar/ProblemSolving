@@ -1,6 +1,6 @@
 // 문자열 내 p와 y의 개수
 // https://school.programmers.co.kr/learn/courses/30/lessons/12916
-// 카운팅 (대소문자 무시)
+// Lv.1 · 카운팅 (대소문자 무시)
 
 import java.util.*;
 

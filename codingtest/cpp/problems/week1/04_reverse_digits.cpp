@@ -1,6 +1,6 @@
 // 자연수 뒤집어 배열로 만들기
 // https://school.programmers.co.kr/learn/courses/30/lessons/12932
-// 숫자 분해
+// Lv.1 · 숫자 분해
 #include <bits/stdc++.h>
 using namespace std;
 

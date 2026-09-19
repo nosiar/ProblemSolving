@@ -1,6 +1,6 @@
 // 네트워크
 // https://school.programmers.co.kr/learn/courses/30/lessons/43162
-// Kit: DFS/BFS — 연결요소
+// Lv.3 · Kit: DFS/BFS — 연결요소
 #include <bits/stdc++.h>
 using namespace std;
 

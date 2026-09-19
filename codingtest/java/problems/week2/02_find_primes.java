@@ -1,6 +1,6 @@
 // 소수 찾기
 // https://school.programmers.co.kr/learn/courses/30/lessons/42839
-// Kit: 완전탐색 — 순열 + 소수판정 (Java엔 next_permutation 없음, 직접 구현)
+// Lv.2 · Kit: 완전탐색 — 순열 + 소수판정 (Java엔 next_permutation 없음, 직접 구현)
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 // N으로 표현
 // https://school.programmers.co.kr/learn/courses/30/lessons/42895
-// Kit: 동적계획법 — 점화식 세우기
+// Lv.3 · Kit: 동적계획법 — 점화식 세우기
 
 import java.util.*;
 

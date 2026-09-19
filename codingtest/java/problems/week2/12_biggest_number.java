@@ -1,6 +1,6 @@
 // 가장 큰 수
 // https://school.programmers.co.kr/learn/courses/30/lessons/42746
-// Kit: 정렬 — 문자열 정렬 비교자
+// Lv.2 · Kit: 정렬 — 문자열 정렬 비교자
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 // 모의고사
 // https://school.programmers.co.kr/learn/courses/30/lessons/42840
-// Kit: 완전탐색 — 패턴 매칭
+// Lv.1 · Kit: 완전탐색 — 패턴 매칭
 #include <bits/stdc++.h>
 using namespace std;
 

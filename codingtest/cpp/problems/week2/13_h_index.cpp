@@ -1,6 +1,6 @@
 // H-Index
 // https://school.programmers.co.kr/learn/courses/30/lessons/42747
-// Kit: 정렬
+// Lv.2 · Kit: 정렬
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,6 +1,6 @@
 // 카펫
 // https://school.programmers.co.kr/learn/courses/30/lessons/42842
-// Kit: 완전탐색 — 약수 탐색
+// Lv.2 · Kit: 완전탐색 — 약수 탐색
 
 import java.util.*;
 

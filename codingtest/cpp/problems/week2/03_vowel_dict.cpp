@@ -1,6 +1,6 @@
 // 모음 사전
 // https://school.programmers.co.kr/learn/courses/30/lessons/84512
-// Kit: 완전탐색 — DFS
+// Lv.2 · Kit: 완전탐색 — DFS
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,6 +1,6 @@
 // 자릿수 더하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/12931
-// String<->int
+// Lv.1 · String<->int
 
 import java.util.*;
 

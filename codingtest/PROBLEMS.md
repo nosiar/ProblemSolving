@@ -16,17 +16,17 @@
 
 목표: 정답보다 **배열/리스트 · 문자열 · 해시맵 · 정렬이 손에 붙는 것**.
 
-- [x] [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) — 완전탐색 + set 중복제거
-- [x] [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — 배열 순회/비교
-- [x] [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/12931) — string↔int
-- [x] [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932) — 숫자 분해
-- [x] [문자열 내 p와 y의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/12916) — 카운팅
-- [x] [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — 정렬 + 커스텀 비교자
-- [x] [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **해시맵 카운팅 핵심** (Kit: 해시)
-- [x] [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 배열 + 정렬 (Kit: 정렬)
-- [x] [모의고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840) — 패턴 매칭, 순회 (Kit: 완전탐색)
-- [x] [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) — set으로 종류 세기 (Kit: 해시)
-- [x] [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) — 그리디 워밍업 (Kit: 탐욕법)
+- [x] `Lv.1` [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) — 완전탐색 + set 중복제거
+- [x] `Lv.1` [같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) — 배열 순회/비교
+- [x] `Lv.1` [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/12931) — string↔int
+- [x] `Lv.1` [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932) — 숫자 분해
+- [x] `Lv.1` [문자열 내 p와 y의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/12916) — 카운팅
+- [x] `Lv.1` [문자열 내림차순으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12917) — 정렬 + 커스텀 비교자
+- [x] `Lv.1` [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) — **해시맵 카운팅 핵심** (Kit: 해시)
+- [x] `Lv.1` [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) — 부분 배열 + 정렬 (Kit: 정렬)
+- [x] `Lv.1` [모의고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840) — 패턴 매칭, 순회 (Kit: 완전탐색)
+- [x] `Lv.1` [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) — set으로 종류 세기 (Kit: 해시)
+- [x] `Lv.1` [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862) — 그리디 워밍업 (Kit: 탐욕법)
 
 > 이 11개를 막힘없이 풀면 "문법 까먹었다"는 느낌은 대부분 사라진다.
 
@@ -37,50 +37,50 @@
 하루에 한 유형씩. "이 유형은 이렇게 접근한다"는 인출 속도 올리기.
 
 ### 완전탐색 / 시뮬레이션 (Kit: 완전탐색)
-- [x] [카펫](https://school.programmers.co.kr/learn/courses/30/lessons/42842) — 약수 탐색
-- [x] [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — 순열 생성 + 소수판정
-- [x] [모음 사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512) — DFS/완전탐색 (수식 + 스택DFS 둘 다)
-- [x] [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) — 격자 BFS (2021 카카오)
+- [x] `Lv.2` [카펫](https://school.programmers.co.kr/learn/courses/30/lessons/42842) — 약수 탐색
+- [x] `Lv.2` [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839) — 순열 생성 + 소수판정
+- [x] `Lv.2` [모음 사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512) — DFS/완전탐색 (수식 + 스택DFS 둘 다)
+- [x] `Lv.2` [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302) — 격자 BFS (2021 카카오)
 
 ### BFS / DFS (Kit: 깊이/너비 우선 탐색)
-- [x] [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165) — DFS 완전탐색 (스택 + 재귀 둘 다)
-- [ ] [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844) — **격자 BFS 정석**
-- [ ] [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162) — DFS/Union-Find 연결요소
-- [ ] [단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163) — BFS (상태 그래프)
+- [x] `Lv.2` [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165) — DFS 완전탐색 (스택 + 재귀 둘 다)
+- [ ] `Lv.2` [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844) — **격자 BFS 정석**
+- [ ] `Lv.3` [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162) — DFS/Union-Find 연결요소
+- [ ] `Lv.3` [단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163) — BFS (상태 그래프)
 
 ### 그리디 (Kit: 탐욕법)
-- [ ] [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) — 스택 그리디
-- [ ] [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885) — 투포인터 + 정렬 그리디
-- [ ] [조이스틱](https://school.programmers.co.kr/learn/courses/30/lessons/42860) — 그리디 + 약간의 케이스
+- [ ] `Lv.2` [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) — 스택 그리디
+- [ ] `Lv.2` [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885) — 투포인터 + 정렬 그리디
+- [ ] `Lv.2` [조이스틱](https://school.programmers.co.kr/learn/courses/30/lessons/42860) — 그리디 + 약간의 케이스
 
 ### 정렬 / 해시 (Kit: 정렬, 해시)
-- [ ] [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) — **문자열 정렬 비교자** ("3"+"30" vs "30"+"3" 함정)
-- [ ] [H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747) — 정렬 후 탐색
-- [ ] [전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577) — 접두사 체크 (해시)
-- [ ] [의상](https://school.programmers.co.kr/learn/courses/30/lessons/42578) — 카운팅 + 경우의 수 (해시)
+- [ ] `Lv.2` [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) — **문자열 정렬 비교자** ("3"+"30" vs "30"+"3" 함정)
+- [ ] `Lv.2` [H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747) — 정렬 후 탐색
+- [ ] `Lv.2` [전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577) — 접두사 체크 (해시)
+- [ ] `Lv.2` [의상](https://school.programmers.co.kr/learn/courses/30/lessons/42578) — 카운팅 + 경우의 수 (해시)
 
 ### 스택 / 큐 (Kit: 스택/큐)
-- [ ] [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) — 스택 기본
-- [ ] [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) — 큐 시뮬레이션
-- [ ] [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) — 우선순위 큐
+- [ ] `Lv.2` [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) — 스택 기본
+- [ ] `Lv.2` [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) — 큐 시뮬레이션
+- [ ] `Lv.2` [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) — 우선순위 큐
 
 ### 이분탐색 / 투포인터 (Kit: 이분탐색)
-- [ ] [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) — **파라메트릭 서치 정석**
-- [ ] [징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236) — 파라메트릭 서치
+- [ ] `Lv.3` [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) — **파라메트릭 서치 정석**
+- [ ] `Lv.4` [징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236) — 파라메트릭 서치
 
 ---
 
 ## 3주차 — DP + 실전 모드 (Lv.2~3)
 
 ### DP (Kit: 동적계획법)
-- [ ] [정수 삼각형](https://school.programmers.co.kr/learn/courses/30/lessons/43105) — 기초 경로 DP
-- [ ] [등굣길](https://school.programmers.co.kr/learn/courses/30/lessons/42898) — 격자 경로 DP + 모듈러
-- [ ] [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) — 원형 DP (Lv.3)
-- [ ] [N으로 표현](https://school.programmers.co.kr/learn/courses/30/lessons/42895) — 점화식 세우기
+- [ ] `Lv.3` [정수 삼각형](https://school.programmers.co.kr/learn/courses/30/lessons/43105) — 기초 경로 DP
+- [ ] `Lv.3` [등굣길](https://school.programmers.co.kr/learn/courses/30/lessons/42898) — 격자 경로 DP + 모듈러
+- [ ] `Lv.4` [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) — 원형 DP
+- [ ] `Lv.3` [N으로 표현](https://school.programmers.co.kr/learn/courses/30/lessons/42895) — 점화식 세우기
 
 ### 실전 세트 (시간 재고 풀기)
-- [ ] [가장 가까운 같은 글자](https://school.programmers.co.kr/learn/courses/30/lessons/142086) — 해시 + 인덱스
-- [ ] [주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341) — 시뮬레이션 + 파싱 (2022 카카오)
+- [ ] `Lv.1` [가장 가까운 같은 글자](https://school.programmers.co.kr/learn/courses/30/lessons/142086) — 해시 + 인덱스
+- [ ] `Lv.2` [주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341) — 시뮬레이션 + 파싱 (2022 카카오)
 - [ ] 카카오 블라인드 기출 세트 — 프로그래머스 → "코딩테스트 연습" → 검색창에 "카카오"
 
 > 3주차 핵심은 난이도보다 **시간 압박 적응**. 실제 코테는 "알지만 시간 안에 못 짠다"가 가장 큰 탈락 사유.

@@ -1,6 +1,6 @@
 // 주차 요금 계산
 // https://school.programmers.co.kr/learn/courses/30/lessons/92341
-// 2022 카카오 — 시뮬레이션 + 파싱
+// Lv.2 · 2022 카카오 — 시뮬레이션 + 파싱
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,6 +1,6 @@
 // 같은 숫자는 싫어
 // https://school.programmers.co.kr/learn/courses/30/lessons/12906
-// 배열 순회/비교
+// Lv.1 · 배열 순회/비교
 
 import java.util.*;
 

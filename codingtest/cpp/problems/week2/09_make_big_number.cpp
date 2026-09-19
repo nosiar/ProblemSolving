@@ -1,6 +1,6 @@
 // 큰 수 만들기
 // https://school.programmers.co.kr/learn/courses/30/lessons/42883
-// Kit: 탐욕법 — 스택 그리디
+// Lv.2 · Kit: 탐욕법 — 스택 그리디
 #include <bits/stdc++.h>
 using namespace std;
 

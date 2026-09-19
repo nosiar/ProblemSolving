@@ -1,6 +1,6 @@
 // 징검다리
 // https://school.programmers.co.kr/learn/courses/30/lessons/43236
-// Kit: 이분탐색 — 파라메트릭 서치
+// Lv.4 · Kit: 이분탐색 — 파라메트릭 서치
 #include <bits/stdc++.h>
 using namespace std;
 

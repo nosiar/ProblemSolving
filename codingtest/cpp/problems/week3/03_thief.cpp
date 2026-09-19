@@ -1,6 +1,6 @@
 // 도둑질
 // https://school.programmers.co.kr/learn/courses/30/lessons/42897
-// Kit: 동적계획법 — 원형 DP (Lv.3)
+// Lv.4 · Kit: 동적계획법 — 원형 DP
 #include <bits/stdc++.h>
 using namespace std;
 

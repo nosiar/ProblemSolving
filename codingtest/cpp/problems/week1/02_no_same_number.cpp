@@ -1,6 +1,6 @@
 // 같은 숫자는 싫어
 // https://school.programmers.co.kr/learn/courses/30/lessons/12906
-// vector 순회/비교
+// Lv.1 · vector 순회/비교
 #include <bits/stdc++.h>
 using namespace std;
 
