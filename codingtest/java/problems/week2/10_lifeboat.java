@@ -6,9 +6,23 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] people, int limit) {
-        int answer = 0;
-        // TODO
-        return answer;
+        Arrays.sort(people);
+
+        int start = 0;
+        int end = people.length - 1;
+        int x = 0;
+        while (start <= end) {
+            if (people[start] + people[end] <= limit) {
+                x++;
+                start++;
+                end--;
+            } else {
+                x++;
+                end--;
+            }
+        }
+
+        return x;
     }
 
     public static void main(String[] args) {
