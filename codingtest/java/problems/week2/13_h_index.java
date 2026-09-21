@@ -6,9 +6,16 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] citations) {
-        int answer = 0;
-        // TODO
-        return answer;
+        List<Integer> sorted = Arrays.stream(citations)
+                .boxed()
+                .sorted(Collections.reverseOrder())
+                .toList();
+
+        int i = 0;
+        while (i < citations.length && sorted.get(i) >= i + 1) {
+            i++;
+        }
+        return i;
     }
 
     public static void main(String[] args) {
