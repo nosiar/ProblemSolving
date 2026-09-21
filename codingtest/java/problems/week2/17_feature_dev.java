@@ -4,11 +4,24 @@
 
 import java.util.*;
 
+
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        int[] answer = {};
-        // TODO
-        return answer;
+        List<Integer> r = new ArrayList<>();
+
+        int maxD = 0;
+        for (int i = 0; i < progresses.length; ++i) {
+
+            int d = (100 - progresses[i] + speeds[i] - 1) / speeds[i];
+
+            if (maxD < d) {
+                r.add(1);
+                maxD = d;
+            } else {
+                r.set(r.size() - 1, r.getLast() + 1);
+            }
+        }
+        return r.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static void main(String[] args) {
