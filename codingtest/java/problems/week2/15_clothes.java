@@ -6,9 +6,18 @@ import java.util.*;
 
 class Solution {
     public int solution(String[][] clothes) {
-        int answer = 0;
-        // TODO
-        return answer;
+        Map<String, Integer> c = new HashMap<>();
+
+        for (String[] cl : clothes) {
+            c.merge(cl[1], 1, Integer::sum);
+        }
+
+        int x = 1;
+        for (int v : c.values()) {
+            x *= v + 1;
+        }
+
+        return x - 1;
     }
 
     public static void main(String[] args) {

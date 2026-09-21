@@ -6,9 +6,19 @@ import java.util.*;
 
 class Solution {
     public boolean solution(String s) {
-        boolean answer = true;
-        // TODO
-        return answer;
+        Deque<Character> d = new ArrayDeque<>();
+
+        for (Character c : s.toCharArray()) {
+            if (c == '(') {
+                d.push(c);
+            } else {
+                if (d.isEmpty()) {
+                    return false;
+                }
+                d.pop();
+            }
+        }
+        return d.isEmpty();
     }
 
     public static void main(String[] args) {
