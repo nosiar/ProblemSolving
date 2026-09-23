@@ -6,9 +6,27 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] priorities, int location) {
-        int answer = 0;
-        // TODO
-        return answer;
+        Queue<int[]> queue = new ArrayDeque<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        for (int i = 0; i < priorities.length; ++i) {
+            queue.offer(new int[]{i, priorities[i]});
+            pq.offer(priorities[i]);
+        }
+
+        int r = 0;
+        while (!queue.isEmpty()) {
+            int[] cur = queue.poll();
+            if (cur[1] == pq.peek()) {
+                pq.poll();
+                r++;
+                if (cur[0] == location) {
+                    return r;
+                }
+            } else {
+                queue.offer(cur);
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
