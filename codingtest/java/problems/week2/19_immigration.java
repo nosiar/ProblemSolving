@@ -6,9 +6,24 @@ import java.util.*;
 
 class Solution {
     public long solution(int n, int[] times) {
-        long answer = 0;
-        // TODO
-        return answer;
+        long l = 1;
+        long h = (long) Arrays.stream(times).max().getAsInt() * n;
+
+        while (l < h) {
+            long mid = (l + h) / 2;
+
+            long handled = 0;
+            for (int t : times) {
+                handled += mid / t;
+            }
+
+            if (handled >= n) {
+                h = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
     }
 
     public static void main(String[] args) {
