@@ -6,9 +6,19 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] money) {
-        int answer = 0;
-        // TODO
-        return answer;
+        int n = money.length;
+        return Math.max(dp(money, 0, n - 1), dp(money, 1, n));
+    }
+
+    private int dp(int[] money, int l, int h) {
+        int p = 0;
+        int pp = 0;
+        for (int i = l; i < h; ++i) {
+            int cur = Math.max(p, pp + money[i]);
+            pp = p;
+            p = cur;
+        }
+        return p;
     }
 
     public static void main(String[] args) {
