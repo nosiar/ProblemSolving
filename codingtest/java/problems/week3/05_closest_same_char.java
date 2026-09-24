@@ -5,10 +5,16 @@
 import java.util.*;
 
 class Solution {
-    public int[] solution(String str) {
-        int[] answer = {};
-        // TODO
-        return answer;
+    public int[] solution(String s) {
+        int[] x = new int[26];
+        for (int i = 0; i < 26; ++i) x[i] = -1;
+        int[] r = new int[s.length()];
+        for (int i = 0; i < s.length(); ++i) {
+            int prevIndex = x[s.charAt(i) - 'a'];
+            r[i] = prevIndex == -1 ? -1 : i - prevIndex;
+            x[s.charAt(i) - 'a'] = i;
+        }
+        return r;
     }
 
     public static void main(String[] args) {
