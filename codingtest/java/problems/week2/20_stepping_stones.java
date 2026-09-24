@@ -6,9 +6,36 @@ import java.util.*;
 
 class Solution {
     public int solution(int distance, int[] rocks, int n) {
-        int answer = 0;
-        // TODO
-        return answer;
+        Arrays.sort(rocks);
+
+        int l = 1;
+        int h = distance;
+        int ans = 0;
+        while (l <= h) {
+            int mid = (l + h) / 2;
+
+            int removedCount = 0;
+            int last = 0;
+            for (int rock : rocks) {
+                if (rock - last < mid) {
+                    removedCount++;
+                } else {
+                    last = rock;
+                }
+            }
+            if (removedCount < rocks.length && distance - last < mid) {
+                removedCount++;
+            }
+
+            if (removedCount <= n) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                h = mid - 1;
+            }
+
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
