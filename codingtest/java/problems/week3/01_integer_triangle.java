@@ -6,9 +6,18 @@ import java.util.*;
 
 class Solution {
     public int solution(int[][] triangle) {
-        int answer = 0;
-        // TODO
-        return answer;
+        int max = triangle[0][0];
+        for (int i = 1; i < triangle.length; ++i) {
+            for (int j = 0; j < triangle[i].length; ++j) {
+                int left = j == 0 ? Integer.MIN_VALUE : triangle[i - 1][j - 1];
+                int right = j == triangle[i].length - 1 ? Integer.MIN_VALUE : triangle[i - 1][j];
+
+                triangle[i][j] += Math.max(left, right);
+
+                max = Math.max(max, triangle[i][j]);
+            }
+        }
+        return max;
     }
 
     public static void main(String[] args) {
