@@ -6,13 +6,35 @@ import java.util.*;
 
 class Solution {
     public int solution(int n, int s, int a, int b, int[][] fares) {
-        int answer = 0;
-        // TODO: 모든 쌍 최단거리 후, 합승 분기점 k에 대해 dist(s,k)+dist(k,a)+dist(k,b) 최소
-        return answer;
-    }
+        int INF = 100_000_000;
 
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        System.out.println(s.solution(6, 4, 6, 2, new int[][]{{4,1,10},{3,5,24},{5,6,2},{3,1,41},{5,1,24},{4,6,50},{2,4,66},{2,3,22},{1,6,25}})); // 기대: 82
+        int[][] dist = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; ++i) {
+            Arrays.fill(dist[i], INF);
+            dist[i][i] = 0;
+        }
+        for (int[] fare : fares) {
+            dist[fare[0]][fare[1]] = fare[2];
+            dist[fare[1]][fare[0]] = fare[2];
+        }
+
+        for (int k = 1; k <= n; ++k) {
+            for (int i = 1; i <= n; ++i) {
+                for (int j = 1; j <= n; ++j) {
+                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                    }
+                }
+            }
+        }
+
+        int minValue = INF;
+        for (int i = 1; i <= n; ++i) {
+            int value = dist[s][i] + dist[i][a] + dist[i][b];
+            if (minValue > value) {
+                minValue = value;
+            }
+        }
+        return minValue;
     }
 }
