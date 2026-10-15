@@ -23,10 +23,10 @@ class Solution {
         int[][] visited = new int[n][m];
         Deque<int[]> d = new ArrayDeque<>();
 
-        if(grid[0][0] == 1)
-            d.push(new int[]{0,0, 0,  grid[0][0] ,   0});
+        if (grid[0][0] == 1)
+            d.push(new int[]{0, 0, 0, grid[0][0], 0});
         else
-            d.push(new int[]{0,0, 1, grid[0][0],   0});
+            d.push(new int[]{0, 0, 1, grid[0][0], 0});
 
 
         Deque<int[]> path = new ArrayDeque<>();
@@ -34,19 +34,19 @@ class Solution {
         // 왼:0 위:1 오:2 아래:3
 
         int count = 0;
-        while(!d.isEmpty()) {
+        while (!d.isEmpty()) {
 
             int[] cur = d.pop();
 
-            while(cur[4] > 0 && path.peek()[4] >= cur[4]) {
+            while (cur[4] > 0 && path.peek()[4] >= cur[4]) {
                 int[] p = path.pop();
 
-                if(visited[p[0]][p[1]] == 9) visited[p[0]][p[1]] = 3 ;
+                if (visited[p[0]][p[1]] == 9) visited[p[0]][p[1]] = 3;
                 else visited[p[0]][p[1]] = 0;
             }
 
             path.push(cur);
-            if(cur[3] == 3 && visited[cur[0]][cur[1]] > 0) {
+            if (cur[3] == 3 && visited[cur[0]][cur[1]] > 0) {
                 visited[cur[0]][cur[1]] = visited[cur[0]][cur[1]] * 3;
             } else {
                 visited[cur[0]][cur[1]] = cur[3];
@@ -54,36 +54,38 @@ class Solution {
 
             List<int[]> nexts = next(cur);
 
-            for(int[] nx : nexts) {
+            for (int[] nx : nexts) {
 
                 // index 넘어감
-                if(nx[0] <0 || nx[1]<0 || nx[0] >=n || nx[1] >=m)  continue;
+                if (nx[0] < 0 || nx[1] < 0 || nx[0] >= n || nx[1] >= m) continue;
                 // 막다른길 생성
-                if (nx[1] ==0  && (nx[3] == 1 || nx[3] == 3 || nx[3] == 4 || nx[3] == 7  )) continue;
-                if (nx[0] ==0  && (nx[3] == 2 || nx[3] == 3 || nx[3] == 4 || nx[3] == 5  )) continue;
-                if (nx[1] ==m-1 && nx[0] != n-1 && (nx[3] == 1 || nx[3] == 3 || nx[3] == 5 || nx[3] == 6  )) continue;
-                if (nx[0] ==n-1 && nx[1] != m-1 && (nx[3] == 2 || nx[3] == 3 || nx[3] == 6 || nx[3] == 7  )) continue;
+                if (nx[1] == 0 && (nx[3] == 1 || nx[3] == 3 || nx[3] == 4 || nx[3] == 7)) continue;
+                if (nx[0] == 0 && (nx[3] == 2 || nx[3] == 3 || nx[3] == 4 || nx[3] == 5)) continue;
+                if (nx[1] == m - 1 && nx[0] != n - 1 && (nx[3] == 1 || nx[3] == 3 || nx[3] == 5 || nx[3] == 6))
+                    continue;
+                if (nx[0] == n - 1 && nx[1] != m - 1 && (nx[3] == 2 || nx[3] == 3 || nx[3] == 6 || nx[3] == 7))
+                    continue;
                 // grid 검사
-                if(grid[nx[0]][nx[1]] == -1) continue;
-                if(grid[nx[0]][nx[1]] != 0 && grid[nx[0]][nx[1]] != nx[3]) continue;
+                if (grid[nx[0]][nx[1]] == -1) continue;
+                if (grid[nx[0]][nx[1]] != 0 && grid[nx[0]][nx[1]] != nx[3]) continue;
 
-                if(visited[nx[0]][nx[1]] != 0 && !(visited[nx[0]][nx[1]] ==3 && nx[3] == 3)) {
+                if (visited[nx[0]][nx[1]] != 0 && !(visited[nx[0]][nx[1]] == 3 && nx[3] == 3)) {
                     continue;
                 }
 
-                if(nx[0]==n-1 && nx[1] == m-1 ) {
+                if (nx[0] == n - 1 && nx[1] == m - 1) {
                     boolean good = true;
-                    for(int i = 0; i < n; ++i){
-                        for(int j =0; j < m; ++j) {
-                            if(grid[i][j] > 0 && visited[i][j] == 0 && !(i==n -1 && j== m-1)) {
-                                good=false;
+                    for (int i = 0; i < n; ++i) {
+                        for (int j = 0; j < m; ++j) {
+                            if (grid[i][j] > 0 && visited[i][j] == 0 && !(i == n - 1 && j == m - 1)) {
+                                good = false;
                             }
-                            if(visited[i][j] >= 27 || visited[i][j] == 3) {
+                            if (visited[i][j] >= 27 || visited[i][j] == 3) {
                                 good = false;
                             }
                         }
                     }
-                    if(good) count++ ;
+                    if (good) count++;
                 } else {
                     d.push(nx);
                 }
@@ -103,106 +105,106 @@ class Solution {
 
         List<int[]> r = new ArrayList<>();
 
-        switch(type) {
-           case 1:
-               if(from == 0) {
-                   r.add(new int[]{i, j+1, 0, 1, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 3, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 4, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 7, pathCount+1});
-               } else {
-                   r.add(new int[]{i, j-1, 2, 1, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 3, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 5, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 6, pathCount+1});
+        switch (type) {
+            case 1:
+                if (from == 0) {
+                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
+                } else {
+                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
                 }
                 break;
             case 2:
-               if(from == 1) {
-                   r.add(new int[]{i+1, j, 1, 2, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 3, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 4, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 5, pathCount+1});
-               } else {
-                   r.add(new int[]{i-1, j, 3, 2, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 3, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 6, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 7, pathCount+1});
+                if (from == 1) {
+                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
+                } else {
+                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
                 }
                 break;
             case 3:
-               if(from == 0) {
-                   r.add(new int[]{i, j+1, 0, 1, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 3, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 4, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 7, pathCount+1});
-               } else if(from==1) {
-                   r.add(new int[]{i+1, j, 1, 2, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 3, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 4, pathCount+1});
-                   r.add(new int[]{i+1, j, 1, 5, pathCount+1});
-                } else if(from==2) {
-                   r.add(new int[]{i, j-1, 2, 1, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 3, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 5, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 6, pathCount+1});
-                } else  {
-                   r.add(new int[]{i-1, j, 3, 2, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 3, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 6, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 7, pathCount+1});
+                if (from == 0) {
+                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
+                } else if (from == 1) {
+                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
+                } else if (from == 2) {
+                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
+                } else {
+                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
                 }
                 break;
             case 4:
-               if(from == 1) {
-                  r.add(new int[]{i, j-1, 2, 1, pathCount+1});
-                  r.add(new int[]{i, j-1, 2, 3, pathCount+1});
-                  r.add(new int[]{i, j-1, 2, 5, pathCount+1});
-                  r.add(new int[]{i, j-1, 2, 6, pathCount+1});
-               } else {
-                   r.add(new int[]{i-1, j, 3, 2, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 3, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 6, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 7, pathCount+1});
+                if (from == 1) {
+                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
+                } else {
+                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
                 }
                 break;
             case 5:
-                if(from == 1) {
-                  r.add(new int[]{i, j+1, 0, 1, pathCount+1});
-                  r.add(new int[]{i, j+1, 0, 3, pathCount+1});
-                  r.add(new int[]{i, j+1, 0, 4, pathCount+1});
-                  r.add(new int[]{i, j+1, 0, 7, pathCount+1});
-               } else {
-                   r.add(new int[]{i-1, j, 3, 2, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 3, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 6, pathCount+1});
-                   r.add(new int[]{i-1, j, 3, 7, pathCount+1});
+                if (from == 1) {
+                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
+                } else {
+                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
+                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
                 }
                 break;
             case 6:
-                if(from == 2) {
-                  r.add(new int[]{i+1, j, 1, 2, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 3, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 4, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 5, pathCount+1});
-               } else {
-                   r.add(new int[]{i, j+1, 0, 1, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 3, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 4, pathCount+1});
-                   r.add(new int[]{i, j+1, 0, 7, pathCount+1});
+                if (from == 2) {
+                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
+                } else {
+                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
+                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
                 }
                 break;
             case 7:
-               if(from == 0) {
-                  r.add(new int[]{i+1, j, 1, 2, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 3, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 4, pathCount+1});
-                  r.add(new int[]{i+1, j, 1, 5, pathCount+1});
-               } else {
-                   r.add(new int[]{i, j-1, 2, 1, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 3, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 5, pathCount+1});
-                   r.add(new int[]{i, j-1, 2, 6, pathCount+1});
+                if (from == 0) {
+                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
+                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
+                } else {
+                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
+                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
                 }
                 break;
         }
@@ -211,11 +213,11 @@ class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.solution(new int[][]{{1,0,-1},{0,0,7},{0,0,2}})); // 기대: 2
-        System.out.println(s.solution(new int[][]{{1,0,0,0,0,-1,-1},{-1,0,0,1,0,0,1}})); // 기대: 2
-        System.out.println(s.solution(new int[][]{{1,0,0,0,0},{0,0,3,0,2},{0,0,0,0,2}})); // 기대: 4
-        System.out.println(s.solution(new int[][]{{1,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,1}})); // 기대: 644
-        System.out.println(s.solution(new int[][]{{1,7},{0,2}})); // 기대: 1
-        System.out.println(s.solution(new int[][]{{1,-1,0,0},{-1,0,0,0},{0,0,0,-1},{0,0,-1,1}})); // 기대: 0
+        System.out.println(s.solution(new int[][]{{1, 0, -1}, {0, 0, 7}, {0, 0, 2}})); // 기대: 2
+        System.out.println(s.solution(new int[][]{{1, 0, 0, 0, 0, -1, -1}, {-1, 0, 0, 1, 0, 0, 1}})); // 기대: 2
+        System.out.println(s.solution(new int[][]{{1, 0, 0, 0, 0}, {0, 0, 3, 0, 2}, {0, 0, 0, 0, 2}})); // 기대: 4
+        System.out.println(s.solution(new int[][]{{1, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 1}})); // 기대: 644
+        System.out.println(s.solution(new int[][]{{1, 7}, {0, 2}})); // 기대: 1
+        System.out.println(s.solution(new int[][]{{1, -1, 0, 0}, {-1, 0, 0, 0}, {0, 0, 0, -1}, {0, 0, -1, 1}})); // 기대: 0
     }
 }

@@ -6,13 +6,25 @@ import java.util.*;
 
 class Solution {
     public int solution(int k, int[][] dungeons) {
-        int answer = 0;
-        // TODO: 던전 방문 순서를 백트래킹으로 전부 시도 → 최대 탐험 개수
-        return answer;
+        boolean[] visited = new boolean[dungeons.length];
+
+        return sub(k, dungeons, visited);
+    }
+
+    private int sub(int k, int[][] dungeons, boolean[] visited) {
+        int result = 0;
+        for (int i = 0; i < visited.length; ++i) {
+            if (!visited[i] && dungeons[i][0] <= k) {
+                visited[i] = true;
+                result = Math.max(result, sub(k - dungeons[i][1], dungeons, visited) + 1);
+                visited[i] = false;
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.solution(80, new int[][]{{80,20},{50,40},{30,10}})); // 기대: 3
+        System.out.println(s.solution(80, new int[][]{{80, 20}, {50, 40}, {30, 10}})); // 기대: 3
     }
 }
