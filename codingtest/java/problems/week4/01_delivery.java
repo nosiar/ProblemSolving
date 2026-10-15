@@ -6,14 +6,14 @@ import java.util.*;
 
 class Solution {
     public int solution(int N, int[][] road, int K) {
-        List<List<int[]>> edges = new ArrayList<>();
+        List<List<int[]>> graph = new ArrayList<>();
         for (int i = 0; i <= N; ++i) {
-            edges.add(new ArrayList<>());
+            graph.add(new ArrayList<>());
         }
 
         for (int[] r : road) {
-            edges.get(r[0]).add(new int[]{r[1], r[2]});
-            edges.get(r[1]).add(new int[]{r[0], r[2]});
+            graph.get(r[0]).add(new int[]{r[1], r[2]});
+            graph.get(r[1]).add(new int[]{r[0], r[2]});
         }
 
         int[] dist = new int[N + 1];
@@ -34,7 +34,7 @@ class Solution {
                 continue;
             }
 
-            for (int[] edge : edges.get(u)) {
+            for (int[] edge : graph.get(u)) {
                 int v = edge[0];
                 int w = edge[1];
 
