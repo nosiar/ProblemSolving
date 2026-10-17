@@ -5,10 +5,36 @@
 import java.util.*;
 
 class Solution {
+    boolean[] col, diag1, diag2;
+    int n;
+
     public int solution(int n) {
-        int answer = 0;
-        // TODO: n x n 체스판에 퀸 n개 서로 공격 못 하게 놓는 경우의 수 (백트래킹)
-        return answer;
+        col = new boolean[n];
+        diag1 = new boolean[2 * n];
+        diag2 = new boolean[2 * n];
+        this.n = n;
+
+        return dfs(0);
+    }
+
+    private int dfs(int r) {
+
+        if (r == n) {
+            return 1;
+        }
+
+        int total = 0;
+
+        for (int c = 0; c < n; ++c) {
+            if (col[c] || diag1[r - c + n - 1] || diag2[r + c]) continue;
+
+            col[c] = diag1[r - c + n - 1] = diag2[r + c] = true;
+
+            total += dfs(r + 1);
+
+            col[c] = diag1[r - c + n - 1] = diag2[r + c] = false;
+        }
+        return total;
     }
 
     public static void main(String[] args) {
