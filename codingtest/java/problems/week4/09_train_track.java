@@ -15,200 +15,104 @@
 import java.util.*;
 
 class Solution {
+    int LEFT = 1, RIGHT = 2, UP = 3, DOWN = 4;
+
+    int[][] delta;
+
+    int[] opposite;
+
+    int[][] nextDir;
+    boolean[][] open;
+
+    int[][] map;
+
+    int n, m;
+
     public int solution(int[][] grid) {
+        n = grid.length;
+        m = grid[0].length;
 
-        int n = grid.length;
-        int m = grid[0].length;
+        map = new int[grid.length][grid[0].length];
+        map[0][0] = grid[0][0];
 
-        int[][] visited = new int[n][m];
-        Deque<int[]> d = new ArrayDeque<>();
+        delta = new int[5][];
+        delta[LEFT] = new int[]{0, -1};
+        delta[RIGHT] = new int[]{0, 1};
+        delta[UP] = new int[]{-1, 0};
+        delta[DOWN] = new int[]{1, 0};
 
-        if (grid[0][0] == 1)
-            d.push(new int[]{0, 0, 0, grid[0][0], 0});
-        else
-            d.push(new int[]{0, 0, 1, grid[0][0], 0});
+        opposite = new int[5];
+        opposite[LEFT] = RIGHT;
+        opposite[RIGHT] = LEFT;
+        opposite[UP] = DOWN;
+        opposite[DOWN] = UP;
+
+        nextDir = new int[8][5];
+        nextDir[1][LEFT] = RIGHT;
+        nextDir[1][RIGHT] = LEFT;
+        nextDir[2][UP] = DOWN;
+        nextDir[2][DOWN] = UP;
+        nextDir[3][LEFT] = RIGHT;
+        nextDir[3][RIGHT] = LEFT;
+        nextDir[3][UP] = DOWN;
+        nextDir[3][DOWN] = UP;
+        nextDir[4][LEFT] = UP;
+        nextDir[4][UP] = LEFT;
+        nextDir[5][RIGHT] = UP;
+        nextDir[5][UP] = RIGHT;
+        nextDir[6][DOWN] = RIGHT;
+        nextDir[6][RIGHT] = DOWN;
+        nextDir[7][DOWN] = LEFT;
+        nextDir[7][LEFT] = DOWN;
 
 
-        Deque<int[]> path = new ArrayDeque<>();
+        open = new boolean[8][5];
+        open[1][LEFT] = open[1][RIGHT] = true;
+        open[2][UP] = open[2][DOWN] = true;
+        open[3][LEFT] = open[3][RIGHT] = open[3][UP] = open[3][DOWN] = true;
+        open[4][UP] = open[4][LEFT] = true;
+        open[5][UP] = open[5][RIGHT] = true;
+        open[6][DOWN] = open[6][RIGHT] = true;
+        open[7][DOWN] = open[7][LEFT] = true;
 
-        // 왼:0 위:1 오:2 아래:3
-
-        int count = 0;
-        while (!d.isEmpty()) {
-
-            int[] cur = d.pop();
-
-            while (cur[4] > 0 && path.peek()[4] >= cur[4]) {
-                int[] p = path.pop();
-
-                if (visited[p[0]][p[1]] == 9) visited[p[0]][p[1]] = 3;
-                else visited[p[0]][p[1]] = 0;
-            }
-
-            path.push(cur);
-            if (cur[3] == 3 && visited[cur[0]][cur[1]] > 0) {
-                visited[cur[0]][cur[1]] = visited[cur[0]][cur[1]] * 3;
-            } else {
-                visited[cur[0]][cur[1]] = cur[3];
-            }
-
-            List<int[]> nexts = next(cur);
-
-            for (int[] nx : nexts) {
-
-                // index 넘어감
-                if (nx[0] < 0 || nx[1] < 0 || nx[0] >= n || nx[1] >= m) continue;
-                // 막다른길 생성
-                if (nx[1] == 0 && (nx[3] == 1 || nx[3] == 3 || nx[3] == 4 || nx[3] == 7)) continue;
-                if (nx[0] == 0 && (nx[3] == 2 || nx[3] == 3 || nx[3] == 4 || nx[3] == 5)) continue;
-                if (nx[1] == m - 1 && nx[0] != n - 1 && (nx[3] == 1 || nx[3] == 3 || nx[3] == 5 || nx[3] == 6))
-                    continue;
-                if (nx[0] == n - 1 && nx[1] != m - 1 && (nx[3] == 2 || nx[3] == 3 || nx[3] == 6 || nx[3] == 7))
-                    continue;
-                // grid 검사
-                if (grid[nx[0]][nx[1]] == -1) continue;
-                if (grid[nx[0]][nx[1]] != 0 && grid[nx[0]][nx[1]] != nx[3]) continue;
-
-                if (visited[nx[0]][nx[1]] != 0 && !(visited[nx[0]][nx[1]] == 3 && nx[3] == 3)) {
-                    continue;
-                }
-
-                if (nx[0] == n - 1 && nx[1] == m - 1) {
-                    boolean good = true;
-                    for (int i = 0; i < n; ++i) {
-                        for (int j = 0; j < m; ++j) {
-                            if (grid[i][j] > 0 && visited[i][j] == 0 && !(i == n - 1 && j == m - 1)) {
-                                good = false;
-                            }
-                            if (visited[i][j] >= 27 || visited[i][j] == 3) {
-                                good = false;
-                            }
-                        }
-                    }
-                    if (good) count++;
-                } else {
-                    d.push(nx);
-                }
-            }
-
-        }
-        return count;
+        return dfs(0, 0, LEFT, grid);
     }
 
-    private List<int[]> next(int[] cur) {
+    private int dfs(int x, int y, int from, int[][] grid) {
 
-        int i = cur[0];
-        int j = cur[1];
-        int from = cur[2];
-        int type = cur[3];
-        int pathCount = cur[4];
-
-        List<int[]> r = new ArrayList<>();
-
-        switch (type) {
-            case 1:
-                if (from == 0) {
-                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
-                } else {
-                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
+        if (x == n - 1 && y == m - 1) {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < m; ++j) {
+                    if (grid[i][j] > 0 && map[i][j] % 10 != grid[i][j] || map[i][j] == 3)
+                        return 0;
                 }
-                break;
-            case 2:
-                if (from == 1) {
-                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
-                } else {
-                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
-                }
-                break;
-            case 3:
-                if (from == 0) {
-                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
-                } else if (from == 1) {
-                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
-                } else if (from == 2) {
-                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
-                } else {
-                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
-                }
-                break;
-            case 4:
-                if (from == 1) {
-                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
-                } else {
-                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
-                }
-                break;
-            case 5:
-                if (from == 1) {
-                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
-                } else {
-                    r.add(new int[]{i - 1, j, 3, 2, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 3, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 6, pathCount + 1});
-                    r.add(new int[]{i - 1, j, 3, 7, pathCount + 1});
-                }
-                break;
-            case 6:
-                if (from == 2) {
-                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
-                } else {
-                    r.add(new int[]{i, j + 1, 0, 1, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 3, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 4, pathCount + 1});
-                    r.add(new int[]{i, j + 1, 0, 7, pathCount + 1});
-                }
-                break;
-            case 7:
-                if (from == 0) {
-                    r.add(new int[]{i + 1, j, 1, 2, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 3, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 4, pathCount + 1});
-                    r.add(new int[]{i + 1, j, 1, 5, pathCount + 1});
-                } else {
-                    r.add(new int[]{i, j - 1, 2, 1, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 3, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 5, pathCount + 1});
-                    r.add(new int[]{i, j - 1, 2, 6, pathCount + 1});
-                }
-                break;
+            }
+            return 1;
         }
-        return r;
+
+        int cur = map[x][y] % 10;
+
+        int[] toDelta = delta[nextDir[cur][from]];
+
+        int nextX = x + toDelta[0];
+        int nextY = y + toDelta[1];
+
+        if (nextX < 0 || nextX >= n || nextY < 0 || nextY >= m)
+            return 0;
+        if (grid[nextX][nextY] == -1)
+            return 0;
+
+        int total = 0;
+        int original = map[nextX][nextY];
+        for (int i = 1; i <= 7; ++i) {
+            if (open[i][opposite[nextDir[cur][from]]] && (map[nextX][nextY] == 0 || (map[nextX][nextY] == 3 && i == 3)) && (grid[nextX][nextY] == 0 || grid[nextX][nextY] == i)) {
+
+                map[nextX][nextY] = original * 10 + i;
+                total += dfs(nextX, nextY, opposite[nextDir[cur][from]], grid);
+                map[nextX][nextY] = original;
+            }
+        }
+        return total;
     }
 
     public static void main(String[] args) {
